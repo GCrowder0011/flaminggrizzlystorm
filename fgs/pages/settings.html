@@ -1,0 +1,65 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>FGS - Settings</title>
+	<meta name="description" content="Settings Page">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/main.js"></script>
+
+	<meta name="theme-color" content="#fafafa">
+</head>
+<header>
+	<input class="logout" type="button" id="logout" value="Logout" onclick="logout()">
+	<nav id="nav_main">
+		<a href="employee.html" class="left">Employees</a>
+		<a href="schedule.html" class="">Schedule</a>
+		<a href="requests.html" class="">Requests</a>
+		<a href="settings.html" class="right current">Settings</a>
+	</nav>
+</header>
+<body>
+	<main>
+		<div class="large">
+			<div class="settings">
+				<div class="threecolumn">
+					<h2>Username:</h2>
+					<h3>ROOTUSER</h3>
+				</div>
+				<div class="threecolumn">
+					<h2>ID:</h2>
+					<h3>0</h3>
+				</div>
+				<div class="threecolumn">
+					<h2>User Type:</h2>
+					<h3>ROOT</h3>
+				</div>
+				<div class="threecolumn">
+					<h2>Password:</h2>
+					<h3>********</h3>
+					<input type="button" id="changepass" value="Change Password" onClick="msg()">
+				</div>
+				<div class="threecolumn">
+					<h2>Email Address:</h2>
+					<h3>rootuser@email.com</h3>
+					<input type="button" id="changeemail" value="Change Email" onClick="msg()">
+				</div>
+			</div>
+			<ul>
+				<input type="button" id="save" value="Save" onclick="savesettings()">
+				<input type="button" id="discard" value="Discard Changes"  onclick="discardsettings()">
+			</ul>
+		</div>
+	</main>
+</body>
+
+</html>

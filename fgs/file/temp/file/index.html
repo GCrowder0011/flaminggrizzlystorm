@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>FGS - Login</title>
+	<meta name="description" content="Main Login Page">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="manifest" href="../../../site.webmanifest">
+	<link rel="apple-touch-icon" href="../../../icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="../../../css/normalize.css">
+	<link rel="stylesheet" href="../../../css/main.css">
+	
+	<script type="text/javascript" src="../../../js/main.js"></script>
+
+	<meta name="theme-color" content="#fafafa">
+</head>
+<header>
+	<nav id="nav_login">
+		<a href="../../../index.html" class="left current">Login</a>
+		<a href="../../../pages/registration.html" class="right">Register</a>
+	</nav>
+</header>
+<body>
+	<main>
+		<h1>Login</h1>
+		<div class="user-pass">
+			<form action="{% url 'login' %}" method="post">
+				{%csrf_token%}
+				<label for="username">Username:</label>
+				<input type="text" name="username"><br>
+				<label for="password">Password:</label>
+				<input name="password" type="password">
+				<ul>
+					<input type="submit" value="Submit">
+					<a href="{%" url="" 'register:index'="" %}=""> Click here to register</a>
+				</ul>
+    		</form>
+		</div>
+	</main>
+</body>
+
+</html>

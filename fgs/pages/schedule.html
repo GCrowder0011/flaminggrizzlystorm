@@ -1,0 +1,168 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>FGS - Schedule</title>
+	<meta name="description" content="Current Schedule">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/main.js"></script>
+
+	<meta name="theme-color" content="#fafafa">
+</head>
+<header>
+	<input class="logout" type="button" id="logout" value="Logout" onclick="logout()">
+	<nav id="nav_main">
+		<a href="employee.html" class="left">Employees</a>
+		<a href="schedule.html" class="current">Schedule</a>
+		<a href="requests.html" class="">Requests</a>
+		<a href="settings.html" class="right">Settings</a>
+	</nav>
+</header>
+<body>
+	<main>
+		<div class="large">
+			<table>
+				<tbody class="schedule">
+					<tr class="header">
+						<th style="width:10%">Employee</th>
+						<th>Mon AM</th>
+						<th>Mon PM</th>
+						<th>Tue AM</th>
+						<th>Tue PM</th>
+						<th>Wed AM</th>
+						<th>Wed PM</th>
+						<th>Thurs AM</th>
+						<th>Thurs PM</th>
+						<th>Fri AM</th>
+						<th>Fri PM</th>
+						<th>Sat AM</th>
+						<th>Sat PM</th>
+						<th>Sun PM</th>
+						<th style="width:10%">Total Hours</th>
+					</tr>
+					<!-- Use this as template to import Employees -->
+					<tr>
+						<td>Carmen Berzatto</td>
+						<td>Expo</td>
+						<td></td>
+						<td>Expo</td>
+						<td>Line</td>
+						<td></td>
+						<td>Expo</td>
+						<td>Expo</td>
+						<td>Expo</td>
+						<td></td>
+						<td>Expo</td>
+						<td></td>
+						<td>Expo</td>
+						<td>Line</td>
+						<td>53</td>
+					</tr>
+					
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr> <!-- Empty Row -->
+					<!-- Shift Info -->
+					<tr> 
+						<td>Expos</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td></td>
+					</tr>
+					<tr> 
+						<td>Lines</td>
+						<td>2</td>
+						<td>2</td>
+						<td>2</td>
+						<td>3</td>
+						<td>2</td>
+						<td>3</td>
+						<td>2</td>
+						<td>3</td>
+						<td>2</td>
+						<td>4</td>
+						<td>2</td>
+						<td>4</td>
+						<td>2</td>
+						<td></td>
+					</tr>
+					<tr> 
+						<td>Preps</td>
+						<td>2</td>
+						<td>1</td>
+						<td>2</td>
+						<td>1</td>
+						<td>2</td>
+						<td>1</td>
+						<td>2</td>
+						<td>1</td>
+						<td>2</td>
+						<td>2</td>
+						<td>1</td>
+						<td>2</td>
+						<td>1</td>
+						<td></td>
+					</tr>
+					<tr> 
+						<td>Dishwashers</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>2</td>
+						<td>1</td>
+						<td>2</td>
+						<td>1</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<ul class="three">
+				<input type="button" id="setup" value="Setup" onclick="msg()">
+				<input type="button" id="edit" value="Manual Edit" onclick="msg()">
+				<input type="button" id="generate" value="Generate Schedule"  onclick="msg()">
+			</ul>
+		</div>
+	</main>
+</body>
+
+</html>

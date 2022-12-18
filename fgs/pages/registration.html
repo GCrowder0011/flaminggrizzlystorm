@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>FGS - Register</title>
+	<meta name="description" content="Registration Page">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/main.js"></script>
+
+	<meta name="theme-color" content="#fafafa">
+</head>
+<header>
+	<nav id="nav_login">
+		<a href="../file/temp/file/index.html" class="left">Login</a>
+		<a href="" class="right current">Register</a>
+	</nav>
+</header>
+<body>
+	<main>
+		<h1>Registration Request Form</h1>
+<div class="register">
+	  <div>
+		  <label for="propuser">Proposed Username:</label>
+		  <input type="text" id="propuser">
+	  </div>
+	  <div>
+		  <label for="proppass">Proposed Password:</label>
+		  <input type="password" id="proppass">
+	  </div>
+	  <div>
+		  <label for="email">Email Address:</label>
+		  <input type="email" id="email">
+	  </div>
+	  <h2>User Type</h2>
+	  <ul class="usertype">
+		  <li>
+			  <input type="radio" id="ROOT" name="usertype">
+			  <label for="ROOT">ROOT</label>
+		  </li>
+		  <li>
+			  <input type="radio" id="ADMIN" name="usertype">
+			  <label for="ADMIN">ADMIN</label>
+		  </li>
+		  <li>
+			  <input type="radio" id="assist" name="usertype" checked="checked">
+			  <label for="assist">ASSISTANT</label>
+		  </li>
+	  </ul>
+	  <input type="button" value="Register" onclick="register()">
+	</div>
+	</main>
+</body>
+
+</html>

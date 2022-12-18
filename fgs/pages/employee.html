@@ -1,0 +1,80 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>FGS - Employees</title>
+	<meta name="description" content="Current Employees Page">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/main.js"></script>
+
+	<meta name="theme-color" content="#fafafa">
+</head>
+<header>
+	<input class="logout" type="button" id="logout" value="Logout" onclick="logout()">
+	<nav id="nav_main">
+		<a href="employee.html" class="left current">Employees</a>
+		<a href="schedule.html" class="">Schedule</a>
+		<a href="requests.html" class="">Requests</a>
+		<a href="settings.html" class="right">Settings</a>
+	</nav>
+</header>
+<body>
+	<main>
+		<div class="large">
+			<table>
+				<tbody class="emp-list">
+					<tr class="header">
+						<th style="width:10%">Employee ID</th>
+						<th style="width:20%">Name</th>
+						<th style="width:15%">Brigade Title</th>
+						<th>Time Off<br/>Reason - Unavailable Hours</th>
+						<th style="width:10%">Min Hours</th>
+						<th style="width:10%">Max Hours</th>
+					</tr>
+					<!-- Use this as template to import Employees -->
+					<tr>
+						<td>
+							<input type="radio" id="1111" name="employeeID">
+							1111
+						</td>
+						<td>Carmen Berzatto</td>
+						<td>Chef de Cuisine</td>
+						<td>AlAnon - Tues 7pm - 8pm
+							<br/>AlAnon - Sat 3pm - 4pm
+						</td>
+						<td>45</td>
+						<td>75</td>
+					</tr>
+					<tr class="">
+						<td>
+							<input type="radio" id="1112" name="employeeID">
+							1111
+						</td>
+						<td>Carmen Berzatto</td>
+						<td>Chef de Cuisine</td>
+						<td>AlAnon - Tues 7pm - 8pm
+							<br/>AlAnon - Sat 3pm - 4pm
+						</td>
+						<td>45</td>
+						<td>75</td>
+					</tr>
+				</tbody>
+			</table>
+			<ul>
+				<input type="button" id="edit" value="Edit Info" onclick="editemploy()">
+				<input type="button" id="remove" value="Remove"  onclick="msg()">
+			</ul>
+		</div>
+	</main>
+</body>
+
+</html>

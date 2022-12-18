@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>FGS - Employee Setup</title>
+	<meta name="description" content="Employee Setup Page">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/main.js"></script>
+
+	<meta name="theme-color" content="#fafafa">
+</head>
+<header>
+	<input class="logout" type="button" id="logout" value="Logout" onclick="logout()">
+	<nav id="nav_main">
+		<form id="empl" method="post" action="{% url 'schedule:employee' %}" class="left">
+            <input type="submit" name="empl" value="Employee" class="left">
+            <input type="hidden" name="id" value={{ id }} >
+        </form>
+        <form id="edit" method="post" action="{% url 'schedule:index' %}">
+              <input type="submit" name="edit" value="Schedule">
+              <input type="hidden" name="id" value={{ id }} >
+        </form>
+        <form id="requ" method="post" action="{% url 'user:request' %}" class="">
+              <input type="submit" name="request" value="Request" class="">
+              <input type="hidden" name="id" value={{ id }} class="">
+        </form>
+        <form id="sett" method="post" action="{% url 'user:setting' %}" class="right">
+              <input type="submit" name="setting" value="Setting" class="right">
+              <input type="hidden" name="id" value={{ id }} >
+        </form>
+	</nav>
+</header>
+<body>
+	<main>
+		<div class="large">
+			<h1>New Employee</h1>
+			<form action="" id="newemployee">
+				<div class="editemploy">
+					<div class="twocolumn">
+						<h2>Username:</h2>
+						<input type="text" value="username" id="username">
+					</div>
+					<div class="twocolumn">
+						<h2>Password:</h2>
+						<input type="password" value="password1" id="password">
+					</div>
+					<div class="twocolumn">
+						<h2>Email Address:</h2>
+						<input type="email" value="email@email.com" id="email">
+					</div>
+					<div class="twocolumn">
+						<h2>User Type:</h2>
+						<select name="Access" id="access">
+							<option value="0">Employee</option>
+							<option value="1">Assistant</option>
+							<option value="2">Admin</option>
+							<option value="3">Root</option>
+						</select>
+					</div>
+					<div class="twocolumn">
+						<h2>Employee ID:</h2>
+						<input type="text" value="1111" id="employid">
+					</div>
+					<div class="twocolumn">
+						<h2>First Name:</h2>
+						<input type="text" value="Carmen" id="employfname">
+					</div>
+					<div class="twocolumn">
+						<h2>Last Name:</h2>
+						<input type="text" value="B." id="employlname">
+					</div>
+					<div class="twocolumn">
+						<h2>Brigade Title:</h2>
+						<select name="brtitle" id="brtitle">
+							<option value="CdC">Chef de Cuisine</option>
+							<option value="SCdC">Sous Chef de Cuisine</option>
+							<option value="CdP">Chef de Partie</option>
+							<option value="Cc">Commis Chef</option>
+							<option value="Plon">Plongeur</option>
+						</select>
+					</div>
+					<div class="twocolumn">
+						<h2>Time Off<br/>Reason - Unavailable Hours:</h2>
+						<textarea id="timeoff" rows="4">AlAnon - Tues 7pm - 8pm, AlAnon - Sat 3pm - 4pm
+						</textarea>
+					</div>
+					<div class="twocolumn">
+						<h2>Min Hours:</h2>
+						<input type="number" min="0" value="45" id="minhr">
+					</div>
+					<div class="twocolumn">
+						<h2>Max Hours:</h2>
+						<input type="number" max="99" value="75" id="maxhr">
+					</div>
+				</div>
+				<ul>
+					<input type="button" id="save" value="Save" onclick="savesettings()">
+					<input type="button" id="discard" value="Discard Changes"  onclick="discardsettings()">
+				</ul>
+			</div>
+		</form>
+	</main>
+</body>
+
+</html>

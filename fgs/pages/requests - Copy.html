@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>FGS - Requests</title>
+	<meta name="description" content="Active Requests Page">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/main.js"></script>
+
+	<meta name="theme-color" content="#fafafa">
+</head>
+<header>
+	<input class="logout" type="button" id="logout" value="Logout" onclick="logout()">
+	<nav id="nav_main">
+		<form id="empl" method="post" action="{% url 'schedule:employee' %}" class="left">
+            <input type="submit" name="empl" value="Employee" class="left">
+            <input type="hidden" name="id" value={{ id }} >
+        </form>
+        <form id="edit" method="post" action="{% url 'schedule:index' %}">
+              <input type="submit" name="edit" value="Schedule">
+              <input type="hidden" name="id" value={{ id }} >
+        </form>
+        <form id="requ" method="post" action="{% url 'user:request' %}" class="current">
+              <input type="submit" name="request" value="Request" class="current">
+              <input type="hidden" name="id" value={{ id }} class="current">
+        </form>
+        <form id="sett" method="post" action="{% url 'user:setting' %}" class="right">
+              <input type="submit" name="setting" value="Setting" class="right">
+              <input type="hidden" name="id" value={{ id }} >
+        </form>
+	</nav>
+</header>
+<body>
+	<main>
+		<div class="large">
+			<h1>Request Queue</h1>
+			<table>
+				<tbody>
+					<tr class="header">
+						<th style="width:5%">Request No.</th>
+						<th style="width:20%">Prop. Username</th>
+						<th style="width:20%">Prop. Password</th>
+						<th>Email Address</th>
+						<th style="width:20%">Requested Type</th>
+					</tr>
+					<!-- Use this as template to import Requests -->
+					<tr>
+						<td>0</td>
+						<td>jsmith</td>
+						<td class="ppass">Password1!</td>
+						<td>jsmith@email.com</td>
+						<td>ASSISTANT</td>
+					</tr>
+				</tbody>
+			</table>
+			<ul class="three">
+				<input type="button" id="accept" value="Accept" onclick="msg()">
+				<input type="button" id="edit" value="Edit Info"  onclick="msg()">
+				<input type="button" id="deny" value="Deny"  onclick="msg()">
+			</ul>
+		</div>
+	</main>
+</body>
+
+</html>

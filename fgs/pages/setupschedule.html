@@ -1,0 +1,200 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>FGS - Employee Setup</title>
+	<meta name="description" content="Settings Page">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+	<link rel="stylesheet" href="../css/main.css">
+
+	<script src="../js/main.js"></script>
+
+	<meta name="theme-color" content="#fafafa">
+</head>
+<header>
+	<input class="logout" type="button" id="logout" value="Logout" onclick="logout()">
+	<nav id="nav_main">
+		<form id="empl" method="post" action="{% url 'schedule:employee' %}" class="left">
+            <input type="submit" name="empl" value="Employee" class="left">
+            <input type="hidden" name="id" value={{ id }} >
+        </form>
+        <form id="edit" method="post" action="{% url 'schedule:index' %}">
+              <input type="submit" name="edit" value="Schedule">
+              <input type="hidden" name="id" value={{ id }} >
+        </form>
+        <form id="requ" method="post" action="{% url 'user:request' %}" class="">
+              <input type="submit" name="request" value="Request" class="">
+              <input type="hidden" name="id" value={{ id }} class="">
+        </form>
+        <form id="sett" method="post" action="{% url 'user:setting' %}" class="right">
+              <input type="submit" name="setting" value="Setting" class="right">
+              <input type="hidden" name="id" value={{ id }} >
+        </form>
+	</nav>
+</header>
+<body>
+	<main>
+		<div class="large">
+			<h1>Schedule Generator</h1>
+			<form action="" id="schedulesetup">
+				<div class="schedulesetup">
+					<h2>Shifts:</h2>
+					<table id="shifts">
+						<tr class="weekdays header">
+							<th>Shifts</th>
+							<th>Monday</th>
+							<th>Tuesday</th>
+							<th>Wednesday</th>
+							<th>Thursday</th>
+							<th>Friday</th>
+							<th>Saturday</th>
+							<th>Sunday</th>
+						</tr>
+						<tr id="am">
+							<td>AM</td>
+							<td><input type="checkbox" checked="checked"></td>
+							<td><input type="checkbox" checked="checked"></td>
+							<td><input type="checkbox" checked="checked"></td>
+							<td><input type="checkbox" checked="checked"></td>
+							<td><input type="checkbox" checked="checked"></td>
+							<td><input type="checkbox" checked="checked"></td>
+							<td><input type="checkbox"></td>
+						</tr>
+						<tr id="pm">
+							<td>PM</td>
+							<td><input type="checkbox" checked="checked"></td>
+							<td><input type="checkbox" checked="checked"></td>
+							<td><input type="checkbox" checked="checked"></td>
+							<td><input type="checkbox" checked="checked"></td>
+							<td><input type="checkbox" checked="checked"></td>
+							<td><input type="checkbox" checked="checked"></td>
+							<td><input type="checkbox" checked="checked"></td>
+						</tr>
+					</table>
+					<h2>Assignments:</h2>
+					<table id="assignments">
+						<tr class="assign-weekdays header">
+							<th>Assignments</th>
+							<th>Shift Time</th>
+							<th>Monday</th>
+							<th>Tuesday</th>
+							<th>Wednesday</th>
+							<th>Thursday</th>
+							<th>Friday</th>
+							<th>Saturday</th>
+							<th>Sunday</th>
+						</tr>
+						<tr id="expo0">
+							<td rowspan="2">Expo</td>
+							<td>AM<br>11AM-4PM</td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+						</tr>
+						<tr id="expo1">
+							<td>PM<br>4PM-10PM</td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+						</tr>
+						<tr id="line0">
+							<td rowspan="2">Line</td>
+							<td>AM<br>10AM-3PM</td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+						</tr>
+						<tr id="line1">
+							<td>PM<br>3PM-10PM</td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="3" max="4"></td>
+							<td><input type="number" min="1" value="3" max="4"></td>
+							<td><input type="number" min="1" value="3" max="4"></td>
+							<td><input type="number" min="1" value="4" max="4"></td>
+							<td><input type="number" min="1" value="4" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+						</tr>
+						<tr id="prep0">
+							<td rowspan="2">Prep</td>
+							<td>AM<br>6AM-1PM</td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+						</tr>
+						<tr id="prep1">
+							<td>PM<br>1PM-7PM</td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+						</tr>
+						<tr id="wash0">
+							<td rowspan="2">Dishwasher</td>
+							<td>AM<br>12PM-4PM</td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+						</tr>
+						<tr id="wash1">
+							<td>PM<br>5PM-11PM</td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="1" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+							<td><input type="number" min="1" value="2" max="4"></td>
+						</tr>
+					</table>
+					<table id="employees">
+						<tr class="header">
+							<th>Employee</th>
+							<th width="10%">Scheduled</th>
+							<th width="10%">Off</th>
+
+						</tr>
+						<tr name="availability">
+							<td id="employeename">Carmen Berzatto</td>
+							<td><input type="radio" id="scheduled" name="off" checked="checked"></td>
+							<td><input type="radio" id="off" name="off"></td>
+						</tr>
+					</table>
+					<ul>
+						<input type="button" id="generate" value="Generate" onclick="savesettings()">
+						<input type="button" id="discard" value="Discard Changes"  onclick="discardsettings()">
+					</ul>
+				</div>
+			</form>
+		</div>
+	</main>
+</body>
+
+</html>
